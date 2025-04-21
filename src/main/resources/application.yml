@@ -3,15 +3,17 @@ spring:
     database: POSTGRESQL
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   datasource:
-    url: jdbc:postgresql://host/database # Додайте власний HOST та базу даних
+    url: jdbc:postgresql://dpg-cvt3m749c44c73cauu40-a/courseapp_sip4  # Додайте власний HOST та базу даних
     username: user # додайте власний логін
-    password: password # додайте власний пароль
+    password: Eyz2kvzVNiyZe7u7Vvmrml6nC4oS3JUV # додайте власний пароль
     driverClassName: org.postgresql.Driver
   sql:
     init:
       platform: postgres
+server:
+  port: 8081
