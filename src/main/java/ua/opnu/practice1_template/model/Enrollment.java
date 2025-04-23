@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
+@Table(name = "enrollments")
 @Data
 
 public class Enrollment {
