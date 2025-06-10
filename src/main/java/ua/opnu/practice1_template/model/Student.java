@@ -4,6 +4,7 @@ package ua.opnu.practice1_template.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import ua.opnu.practice1_template.part2.User;
 
 import java.util.List;
 
@@ -17,7 +18,15 @@ public class Student {
 
     private String name;
     private String email;
+//// додано
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+////
 
+    public void setUser(User user) {
+        this.user = user;
+    }
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Enrollment> enrollments;
 
